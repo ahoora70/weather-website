@@ -10,7 +10,7 @@ const geocode = (address, callback) => {
     address +
     ".json?access_token=pk.eyJ1IjoicGFydmF6ejEzNjUiLCJhIjoiY2p6MnJxY2MzMDA2MjNjbzhxa2xxN2hlMCJ9.EcOChS6x4XfBzomP7JiHPw";
   // اینجا دیستراکچر کردیم
-  request({ url, json: true }, (error, { body }) => {
+  request({ url, json: true }, (error, { body } = {}) => {
     if (error) {
       callback("Unable to connect to location services!", undefined);
     } else if (body.message) {
