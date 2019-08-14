@@ -13,8 +13,11 @@ weatherForm.addEventListener("submit", event => {
 
   result1.textContent = "loading...";
   result2.textContent = "";
-  result4.textContent = "";
   result3.textContent = "";
+  result4.textContent = "";
+  result5.textContent = "";
+  result6.textContent = "";
+  result7.textContent = "";
 
   fetch("/weather?address=" + location).then(response => {
     response.json().then(data => {
@@ -22,7 +25,13 @@ weatherForm.addEventListener("submit", event => {
         result1.textContent = data.error;
       } else {
         result1.textContent = "temperature: " + data.temperature;
-        result2.textContent = "humidity: " + data.humidity;
+        (result2.textContent = "humidity: " + data.humidity + "%"),
+          (result5.textContent =
+            "apparent Temperature: " + data.apparentTemperature);
+        result6.textContent =
+          "apparent Temperature High: " + data.apparentTemperatureHigh;
+        result7.textContent =
+          "apparent Temperature Low: " + data.apparentTemperatureLow;
         result3.textContent = "summary: " + data.summary;
         result4.textContent = "location: " + data.location;
       }

@@ -36,11 +36,12 @@ app.get("", (req, res) => {
 });
 app.get("/about", (req, res) => {
   res.render("about", {
-    title: "about my page ",
+    title: "about ",
     masage: "",
     error: ""
   });
 });
+
 // #17
 // وارد کردن اطلاعات از برنامه هواشناسی
 const geocode = require("./utils/geocode");
@@ -65,6 +66,9 @@ app.get("/weather", (req, res) => {
         res.send({
           temperature: forecastData.temperature,
           humidity: forecastData.humidity,
+          apparentTemperature: forecastData.apparentTemperature,
+          apparentTemperatureHigh: forecastData.apparentTemperatureHigh,
+          apparentTemperatureLow: forecastData.apparentTemperatureLow,
           summary: forecastData.summary,
           location
         });
@@ -72,6 +76,7 @@ app.get("/weather", (req, res) => {
     }
   );
 });
+
 app.get("/help", (req, res) => {
   res.render("help", {
     title: "help",

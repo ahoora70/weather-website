@@ -21,6 +21,9 @@ const forecast = (longitude, latitude, callback) => {
     callback(undefined, {
       temperature: body.currently.temperature,
       humidity: body.currently.humidity,
+      apparentTemperature: body.currently.apparentTemperature,
+      apparentTemperatureHigh: body.daily.data[0].apparentTemperatureHigh,
+      apparentTemperatureLow: body.daily.data[0].apparentTemperatureLow,
       summary: body.currently.summary
     });
   });
