@@ -1,30 +1,5 @@
 const geocode = require("./utils/geocode");
 const forecast = require("./utils/forecast");
-// const address = process.argv[2];
-// if (!address) {
-//   return console.log("please enter the address");
-// } else {
-//   geocode(address, (error, { longitude, latitude, location } = {}) => {
-//     if (error) {
-//       console.log(error);
-//     } else {
-//       forecast(
-//         latitude,
-//         longitude,
-//         (error, { temperature, humidity, summary }) => {
-//           if (error) {
-//             console.log("error in forecast servec");
-//           } else {
-//             console.log(temperature);
-//             console.log(humidity);
-//             console.log(summary);
-//             console.log(location);
-//           }
-//         }
-//       );
-//     }
-//   });
-// }
 
 const express = require("express");
 const app = express();
