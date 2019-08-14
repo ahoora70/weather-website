@@ -63,9 +63,10 @@ app.get("/weather", (req, res) => {
           return res.send({ error });
         }
         res.send({
-          forecast: forecastData,
-          location,
-          address: req.query.address
+          temperature: forecastData.temperature,
+          humidity: forecastData.humidity,
+          summary: forecastData.summary,
+          location
         });
       });
     }
