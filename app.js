@@ -4,6 +4,8 @@ const forecast = require("./utils/forecast");
 const express = require("express");
 const app = express();
 
+const port = process.env.PORT || 3000;
+
 const path = require("path");
 
 app.set("view engine", "hbs");
@@ -52,6 +54,6 @@ app.get("/weather", (req, res) => {
 //
 //
 
-app.listen(3000, () => {
-  console.log("server is running...");
+app.listen(port, () => {
+  console.log("server is on port" + port + "...");
 });
