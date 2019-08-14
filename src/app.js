@@ -25,6 +25,7 @@ app.use(express.static(pathName));
 
 //
 //
+const port = process.env.PORT || 3000;
 
 app.get("", (req, res) => {
   res.render("index", {
@@ -90,6 +91,6 @@ app.get("*", (req, res) => {
     title: "page not found 404 !!!"
   });
 });
-app.listen(3000, () => {
-  console.log("server in running...");
+app.listen(port, () => {
+  console.log("server is on port" + port + "...");
 });
